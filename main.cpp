@@ -46,6 +46,11 @@ void restart(int score);
 void getInstructions(int score);
 
 /**
+* @brief Fonction pour ajouter les scores du joueur.
+*/
+void setNewScore(int score);
+
+/**
 * @brief Fonction affichant les scores du meilleurs au moins bon et en supprimant l'affichage du terminal.
 * Cette fonction permet aussi de quitter ce menu.
 */
@@ -131,6 +136,9 @@ int main()
                 // met en pause le système définissant la vitesse du serpent.
                 mySleep(SPEED);
             }
+
+            // Enregistrer le score du joueur
+            setNewScore(snakeSize);
         }
         // test si on souhaite afficher le menu
         else if (input.at(0) == KEY_INSTRUCTION)
@@ -163,6 +171,19 @@ void getInstructions(int score)
     cin >> input;
     if (input.at(0) == KEY_MENU)
         restart(score);
+}
+
+void setNewScore(int score)
+{
+    clearScreen();
+    displayUsernameRequest();
+
+    score = 3;
+
+    string username;
+    cin >> username;
+
+    insertScore(to_string(score), username, SCOREFILEPATH);
 }
 
 void getHighScore(int score)

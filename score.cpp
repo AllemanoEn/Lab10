@@ -45,3 +45,49 @@ vector<string> lecture(const string& strNomDuFichier){
 
     return vScores;
 }
+
+void insertScore(const string& newScore, const string& username, const string& strNomDuFichier)
+{
+    vector<string> vScore = lecture(strNomDuFichier);
+    string highScore = "";
+    string formatedScore = newScore + ":" + username;
+
+    ofstream outputFile;
+    outputFile.open(strNomDuFichier);
+
+    for(int i = 0; i < vScore.size(); i++)
+    {
+        highScore = "";
+
+        for(char c : vScore.at(i))
+        {
+            if(isdigit(c))
+            {
+                highScore.push_back(c);
+            }
+            else if(!highScore.empty())
+            {
+                break;
+            }
+        }
+
+        if(highScore.compare(newScore) < 0)
+        {
+            vScore.insert(vScore.begin()+i,formatedScore);
+            break;
+        }
+
+    }
+
+    // Si le score est dernier au classement
+    if(highScore.compare(newScore) > 0)
+    {
+        vScore.insert(vScore.end(),formatedScore);
+    }
+
+    for(int i = 0; i < vScore.size(); i++) {
+        outputFile << vScore[i] << endl;
+    }
+
+    outputFile.close();
+}

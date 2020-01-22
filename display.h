@@ -34,6 +34,11 @@ void displayInstructions();
 void displayHighScore();
 
 /**
+* @brief Fonction affichant la demande du nom d'utilisateur du joueur.
+*/
+void displayUsernameRequest();
+
+/**
 * @brief Fonction affichant le score d'un joueur.
 */
 void displayPlayerScore();

@@ -33,6 +33,10 @@ void displayInstructions(){
     std::cout << INSTR_MENU << std::endl;   
 }
 
+void displayUsernameRequest(){
+    cout << USERNAME_REQUEST;
+}
+
 void displayHighScore(){
 
     for(const auto& a : lecture(SCOREFILEPATH)){

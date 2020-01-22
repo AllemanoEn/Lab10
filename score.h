@@ -19,4 +19,6 @@ using namespace std;
 
 vector<string> lecture(const string& strNomDuFichier);
 
+void insertScore(const string& newScore, const string& username, const string& strNomDuFichier);
+
 #endif //LAB10_SCORE_H
