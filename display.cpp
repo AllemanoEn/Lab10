@@ -18,6 +18,8 @@ void displayMenu(int score){
     std::cout << MENU_START << std::endl;
     std::cout << MENU_QUIT << std::endl;
     std::cout << MENU_INSTRUCTION << std::endl;
+    std::cout << MENU_SEARCHPLAYER << std::endl;
+    std::cout << MENU_HIGHSCORE << std::endl;
     std::cout << MENU_SCORE << std::to_string(score) << std::endl;
 }
 

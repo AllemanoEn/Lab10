@@ -9,18 +9,24 @@ const char KEY_DOWN = 's';
 const char KEY_LEFT = 'a';
 const char KEY_RIGHT = 'd';
 const char KEY_MENU = 'm';
+const char KEY_HIGHSCORE = 'h';
+const char KEY_SEARCHPLAYER = 'p';
 
 // MENU 
 const std::string TXT_HELLO = "Hello, press ";
 const std::string TXT_PRESS = "Press ";
 const std::string TXT_START = " to Start!";
 const std::string TXT_QUIT = " to Quit";
-const std::string TXT_INSTRUCTION = " for Instructions.";
+const std::string TXT_INSTRUCTION = " for Instructions";
+const std::string TXT_SEARCHPLAYER = " to search a player and see his score";
+const std::string TXT_HIGHSORE = " to see all player highscore classification.";
 
 const std::string MENU_WELCOME = "WELCOME TO SNAKE CONSOLE!";
 const std::string MENU_START = TXT_HELLO + KEY_START + TXT_START;
 const std::string MENU_QUIT = TXT_PRESS + KEY_QUIT + TXT_QUIT;
 const std::string MENU_INSTRUCTION = TXT_PRESS + KEY_INSTRUCTION + TXT_INSTRUCTION;
+const std::string MENU_SEARCHPLAYER = TXT_PRESS + KEY_SEARCHPLAYER + TXT_SEARCHPLAYER;
+const std::string MENU_HIGHSCORE = TXT_PRESS + KEY_HIGHSCORE + TXT_HIGHSORE;
 const std::string MENU_SCORE = "Your Previous Score: ";
 
 // INSTRUCTION

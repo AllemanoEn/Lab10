@@ -123,6 +123,16 @@ int main()
         // test si on souhaite arrêter de jouer.
         else if (input.at(0) == KEY_QUIT)
             shutDown = true;
+        else if (input.at(0) == KEY_SEARCHPLAYER){
+
+            cout << "Rercherche un joueur et affiche son score !";
+
+        }
+        else if (input.at(0) == KEY_HIGHSCORE){
+
+            cout << "Affiche le highscore !";
+
+        }
 
     } while (shutDown == false);
     return 0;
