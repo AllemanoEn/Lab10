@@ -38,7 +38,37 @@ void displayHighScore(){
     for(const auto& a : lecture(SCOREFILEPATH)){
         cout << a << endl;
     }
+    
+    cout << INSTR_MENU << endl;
+}
 
+void displayPlayerScore(){
+
+    string player;
+    bool UNKNOW_PLAYER = true;
+
+    cout << "Player name : ";
+    cin >> player;
+    cout << endl;
+
+    vector<string> v = lecture(SCOREFILEPATH);
+    for(const auto& a : v){
+        if(a.find(player)!=string::npos){
+            UNKNOW_PLAYER = false;
+            cout << player << "'s score is ";
+
+            for (int i = 0; i < a.find(':'); ++i) {
+                cout << a.at(i);
+            }
+
+            cout << endl;
+        }
+    }
+    if(UNKNOW_PLAYER){
+        cout << "Unknow player :(" << endl;
+    }
+
+    cout << INSTR_MENU << endl;
 }
 
 void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, int fruitPosY, int snakeSize, int tailX[], int tailY[])

@@ -34,6 +34,11 @@ void displayInstructions();
 void displayHighScore();
 
 /**
+* @brief Fonction affichant le score d'un joueur.
+*/
+void displayPlayerScore();
+
+/**
 * @brief Fonction affichant le plateau de jeu.
 * @param width largeur du plateau de jeu.
 * @param height hauteur du plateau de jeu.

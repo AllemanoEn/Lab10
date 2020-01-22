@@ -52,6 +52,12 @@ void getInstructions(int score);
 void getHighScore(int score);
 
 /**
+* @brief Fonction affichant le score d'un joueur donné et en supprimant l'affichage du terminal.
+* Cette fonction permet aussi de quitter ce menu.
+*/
+void getPlayerScore(int score);
+
+/**
 * @brief Fonction faisant la traduction entre la direction entrée par l'utilisateur et la direction du serpent.
 * @param direction direction proposée par l'utilisateur
 * @param oldDirection Direction actuelle du serpent
@@ -86,6 +92,8 @@ int main()
     int posFruitX;
     int posFruitY;
     fruitSpawn(posFruitX,posFruitY, WIDTH, HEIGHT);
+
+    string playerName;
 
     // BOUCLE DU MENU.
     do {
@@ -131,15 +139,10 @@ int main()
         else if (input.at(0) == KEY_QUIT)
             shutDown = true;
         else if (input.at(0) == KEY_SEARCHPLAYER){
-
-            cout << "Rercherche un joueur et affiche son score !";
-
+            getPlayerScore(snakeSize);
         }
-        else if (input.at(0) == KEY_HIGHSCORE){
-
+        else if (input.at(0) == KEY_HIGHSCORE)
             getHighScore(snakeSize);
-
-        }
 
     } while (shutDown == false);
     return 0;
@@ -166,6 +169,17 @@ void getHighScore(int score)
 {
     clearScreen();
     displayHighScore();
+
+    string input;
+    cin >> input;
+    if (input.at(0) == KEY_MENU)
+        restart(score);
+}
+
+void getPlayerScore(int score)
+{
+    clearScreen();
+    displayPlayerScore();
 
     string input;
     cin >> input;
