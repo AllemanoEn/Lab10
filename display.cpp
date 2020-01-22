@@ -12,6 +12,7 @@
  */
 
 #include "display.h"
+#include "score.h"
 
 void displayMenu(int score){
     std::cout << MENU_WELCOME << std::endl;
@@ -30,6 +31,14 @@ void displayInstructions(){
     std::cout << INSTR_RIGHT << std::endl;
     std::cout << INSTR_EXIT << std::endl;
     std::cout << INSTR_MENU << std::endl;   
+}
+
+void displayHighScore(){
+
+    for(const auto& a : lecture(SCOREFILEPATH)){
+        cout << a << endl;
+    }
+
 }
 
 void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, int fruitPosY, int snakeSize, int tailX[], int tailY[])

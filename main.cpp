@@ -22,6 +22,7 @@
 #include "sysFunc.h"
 #include "display.h"
 #include "gameEngine.h"
+#include "score.h"
 
 using namespace std;
 
@@ -43,6 +44,12 @@ void restart(int score);
 * @param score score actuel du joueur.
 */
 void getInstructions(int score);
+
+/**
+* @brief Fonction affichant les scores du meilleurs au moins bon et en supprimant l'affichage du terminal.
+* Cette fonction permet aussi de quitter ce menu.
+*/
+void getHighScore(int score);
 
 /**
 * @brief Fonction faisant la traduction entre la direction entrée par l'utilisateur et la direction du serpent.
@@ -130,7 +137,7 @@ int main()
         }
         else if (input.at(0) == KEY_HIGHSCORE){
 
-            cout << "Affiche le highscore !";
+            getHighScore(snakeSize);
 
         }
 
@@ -148,6 +155,17 @@ void getInstructions(int score)
  {
     clearScreen();
     displayInstructions();
+
+    string input;
+    cin >> input;
+    if (input.at(0) == KEY_MENU)
+        restart(score);
+}
+
+void getHighScore(int score)
+{
+    clearScreen();
+    displayHighScore();
 
     string input;
     cin >> input;

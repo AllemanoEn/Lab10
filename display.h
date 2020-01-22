@@ -29,6 +29,11 @@ void displayMenu(int score);
 void displayInstructions();
 
 /**
+* @brief Fonction affichant les meilleurs scores du meilleurs au moins bon.
+*/
+void displayHighScore();
+
+/**
 * @brief Fonction affichant le plateau de jeu.
 * @param width largeur du plateau de jeu.
 * @param height hauteur du plateau de jeu.

@@ -52,3 +52,6 @@ const std::string SNAKE_HEAD = "O";
 const std::string FRUIT = "F";
 const std::string SNAKE_TAIL = "o";
 const std::string ACTUAL_SCORE = "Actual score : ";
+
+// PATH FILE
+const std::string SCOREFILEPATH = "../score.txt";
