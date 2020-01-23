@@ -4,6 +4,6 @@
 1:Paulho
 1:Paulha
 18:Teko
-<<<<<<< HEAD
-0:Enzo
+0:Pire
 0:Enzolo
+0:Enzo

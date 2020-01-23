@@ -86,3 +86,12 @@ void insertScore(const string& newScore, const string& username, const string& s
     }
     outputFile.close();
 }
+
+vector<string> sortScores(const string& strNomDuFichier){
+
+}
+
+void getOnlyScores(const vector<string>& vScore){
+
+
+}
