@@ -73,13 +73,16 @@ void insertScore(const string& newScore, const string& username, const string& s
         cnt++;
     }
 
+
     if(!FIND)
     {
         vScore.push_back(formatedScore);
     }
 
-    for(int i = 0; i < vScore.size(); i++) {
-        outputFile << vScore[i] << endl;
+    sort(vScore.rbegin(),vScore.rend());
+
+    for(const auto & k : vScore) {
+        outputFile << k << endl;
     }
     outputFile.close();
 }
