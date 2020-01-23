@@ -49,45 +49,30 @@ vector<string> lecture(const string& strNomDuFichier){
 void insertScore(const string& newScore, const string& username, const string& strNomDuFichier)
 {
     vector<string> vScore = lecture(strNomDuFichier);
-    string highScore = "";
-    string formatedScore = newScore + ":" + username;
-
+    string highScore;
+    string formatedScore = newScore + ":" + username + "\n";
+    int i = 0;
+    bool FIND = false;
     ofstream outputFile;
-    outputFile.open(strNomDuFichier);
-
-    for(int i = 0; i < vScore.size(); i++)
+    outputFile.open(strNomDuFichier,std::ofstream::app);
+    for(auto vs : vScore)
     {
-        highScore = "";
-
-        for(char c : vScore.at(i))
-        {
-            if(isdigit(c))
-            {
-                highScore.push_back(c);
+        if(vs.find(username) != string::npos){
+            for (;i < vs.find(':'); ++i) {
+                highScore += vs.at(i);
             }
-            else if(!highScore.empty())
-            {
-                break;
+            if(highScore < newScore){
+                for(int j = 0; j < i; ++j){
+                    vs.at(j) = highScore.at(j);
+                }
             }
-        }
-
-        if(highScore.compare(newScore) < 0)
-        {
-            vScore.insert(vScore.begin()+i,formatedScore);
+            FIND = true;
             break;
         }
-
     }
 
-    // Si le score est dernier au classement
-    if(highScore.compare(newScore) > 0)
-    {
-        vScore.insert(vScore.end(),formatedScore);
-    }
-
-    for(int i = 0; i < vScore.size(); i++) {
-        outputFile << vScore[i] << endl;
-    }
+    if(!FIND)
+        outputFile << formatedScore;
 
     outputFile.close();
 }

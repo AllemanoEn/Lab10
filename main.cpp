@@ -98,8 +98,6 @@ int main()
     int posFruitY;
     fruitSpawn(posFruitX,posFruitY, WIDTH, HEIGHT);
 
-    string playerName;
-
     // BOUCLE DU MENU.
     do {
         restart(snakeSize);
@@ -177,8 +175,6 @@ void setNewScore(int score)
 {
     clearScreen();
     displayUsernameRequest();
-
-    score = 3;
 
     string username;
     cin >> username;
