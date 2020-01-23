@@ -31,6 +31,7 @@ const int HEIGHT = 20;
 const int START_POS_X_SNAKE = WIDTH / 2;
 const int START_POS_Y_SNAKE = HEIGHT / 2;
 const int SPEED = 500000;
+const int NBOBSTACLES = 3;
 
 /**
 * @brief Fonction affichant le menu et supprimant l'affichage du terminal.
@@ -87,6 +88,7 @@ int main()
     bool shutDown = false;
     int tailX[400], tailY[400];
     char actualDirection = KEY_UP;
+    vector<vector<int>> vecteurObstacles;
 
     int posSnakeX;
     int posSnakeY;
@@ -96,7 +98,9 @@ int main()
 
     int posFruitX;
     int posFruitY;
-    fruitSpawn(posFruitX,posFruitY, WIDTH, HEIGHT);
+    fruitSpawn(vecteurObstacles,posFruitX,posFruitY, WIDTH, HEIGHT);
+
+    obstacleSpawn(NBOBSTACLES,vecteurObstacles, posFruitX, posFruitY, WIDTH, HEIGHT);
 
     // BOUCLE DU MENU.
     do {
@@ -114,7 +118,7 @@ int main()
                 clearScreen();
 
                 // dessine le pleateau de jeu
-                draw(WIDTH, HEIGHT, posSnakeX, posSnakeY, posFruitX, posFruitY, snakeSize, tailX, tailY);
+                draw(WIDTH, HEIGHT, posSnakeX, posSnakeY, posFruitX, posFruitY, snakeSize, tailX, tailY,vecteurObstacles);
 
                 // detecte une entrée sur le clavier et récupère le charactère.
                 char newDirection;
@@ -129,7 +133,7 @@ int main()
                 dir = manageDirection(actualDirection, dir, gameover);
 
                 // Ordonne le mouvement au serpent et définis si il meurt.
-                logic(WIDTH, HEIGHT, posSnakeX, posSnakeY, posFruitX, posFruitY, snakeSize, tailX, tailY, dir, gameover);  
+                logic(vecteurObstacles,WIDTH, HEIGHT, posSnakeX, posSnakeY, posFruitX, posFruitY, snakeSize, tailX, tailY, dir, gameover);
 
                 // met en pause le système définissant la vitesse du serpent.
                 mySleep(SPEED);

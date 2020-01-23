@@ -75,7 +75,7 @@ void displayPlayerScore(){
     cout << INSTR_MENU << endl;
 }
 
-void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, int fruitPosY, int snakeSize, int tailX[], int tailY[])
+void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, int fruitPosY, int snakeSize, int tailX[], int tailY[], std::vector<std::vector<int>>& vecteurObstacles)
  {
     for (int i = 0; i < width + 2; i++) {
         std::cout << BORDER;
@@ -90,11 +90,23 @@ void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, in
             if (j == 0)
                 std::cout << BORDER;
 
+            std::vector<int> coord = {i, j};
+
             if (i == snakePosY && j == snakePosX)
                 std::cout << SNAKE_HEAD;
-
             else if (i == fruitPosY && j == fruitPosX)
                 std::cout << FRUIT;
+            else if (std::find(vecteurObstacles.begin(), vecteurObstacles.end(), coord) != vecteurObstacles.end())
+                std::cout << OBSTACLE;
+               /* for(size_t t = 0; t < vecteurObstacles.size();t++)
+                {
+                    if (j == vecteurObstacles.at(t).at(0) && i == vecteurObstacles.at(t).at(1))
+                    {
+                        std::cout << OBSTACLE;
+                    }
+                } */
+
+
 
             else {
 

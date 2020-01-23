@@ -58,3 +58,4 @@ const std::string USERNAME_REQUEST = "Enter your username : ";
 
 // PATH FILE
 const std::string SCOREFILEPATH = "../score.txt";
+const std::string OBSTACLE = "x";

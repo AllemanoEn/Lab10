@@ -15,7 +15,9 @@
 #define DISPLAY
 
 #include <iostream>
+#include <algorithm>
 #include "textConst.h"
+#include <vector>
 
 /**
 * @brief Fonction affichant les informations du menu au terminal.
@@ -55,5 +57,5 @@ void displayPlayerScore();
 * @param tailX tableau de positions X correspondant aux coordonnées X de la queue du serpent
 * @param tailY tableau de positions Y correspondant aux coordonnées Y de la queue du serpent
 */
-void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, int fruitPosY, int snakeSize, int tailX[], int tailY[]);
+void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, int fruitPosY, int snakeSize, int tailX[], int tailY[], std::vector<std::vector<int>>& vecteurObstacles);
 #endif

@@ -1,13 +1,48 @@
 #include "gameEngine.h"
 
-void fruitSpawn(int& fruitX, int& fruitY, const int width, const int height)
+
+void fruitSpawn(std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int& fruitY, const int width, const int height)
  {
     srand ( time(NULL) );
-    fruitX = rand() % width;
-    fruitY = rand() % height;
+    int fruitPosX = rand() % width;
+    int fruitPosY = rand() % height;
+    if(vectorObstacles.empty())
+    {
+        fruitX=fruitPosX;
+        fruitY=fruitPosY;
+    }
+    else {
+        for (size_t j = 0; j < vectorObstacles.size(); j++) { // Empêche le spawn d'obstacle sur le fruit
+            if (fruitPosX != vectorObstacles.at(j).at(0) && fruitPosY != vectorObstacles.at(j).at(1)) {
+                fruitX = fruitPosX;
+                fruitY = fruitPosY;
+            } else fruitSpawn(vectorObstacles, fruitX, fruitY, width, height);
+
+        }
+    }
+
 }
 
-void logic(const int width,const int height, int& snakePosX, int& snakePosY, int& fruitPosX, int& fruitPosY, int& snakeSize, int tailX[], int tailY[], const eDirection direction, bool& gameover)
+void obstacleSpawn(const int& nbObstacles, std::vector<std::vector<int>>& vectorObstacles, int& fruitPosX, int& fruitPosY, const int width, const int height)
+{
+    for(unsigned i=0;i<nbObstacles;i++)
+    {
+        //srand ( time(NULL) );
+        int obstacleX = rand() % width;
+        int obstacleY = rand() % height;
+            if (fruitPosX != obstacleX && fruitPosY != obstacleY) {
+                vectorObstacles.push_back({obstacleX,obstacleY});
+            }
+            else
+            {
+                obstacleSpawn(nbObstacles,vectorObstacles,fruitPosX,fruitPosY,width,height);
+            }
+    }
+
+
+}
+
+void logic(std::vector<std::vector<int>>& vecteurObstacles, const int width,const int height, int& snakePosX, int& snakePosY, int& fruitPosX, int& fruitPosY, int& snakeSize, int tailX[], int tailY[], const eDirection direction, bool& gameover)
  {
     int prevX = tailX[0];
     int prevY = tailY[0];
@@ -57,6 +92,18 @@ void logic(const int width,const int height, int& snakePosX, int& snakePosY, int
     // Test si le serpent mange un Fruit
     if (snakePosX == fruitPosX && snakePosY == fruitPosY) {
         snakeSize++;
-        fruitSpawn(fruitPosX,fruitPosY,width,height);
+        fruitSpawn(vecteurObstacles,fruitPosX,fruitPosY,width,height);
     }
+
+    // Test si le serpent touche un obstacle
+     for(size_t i = 0; i < vecteurObstacles.size();i++)
+     {
+
+         if (snakePosX == vecteurObstacles.at(i).at(0) && snakePosY == vecteurObstacles.at(i).at(1))
+         {
+             gameover = true;
+         }
+
+     }
+
 }
