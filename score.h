@@ -21,8 +21,8 @@ vector<string> lecture(const string& strNomDuFichier);
 
 void insertScore(const string& newScore, const string& username, const string& strNomDuFichier);
 
-vector<string> sortScores(const string& strNomDuFichier);
+vector<string> sortScores(vector<string>& vNumbers, vector<string>& vScore);
 
-void getOnlyScores(const vector<string>& vScore);
+vector<string> getOnlyScores(const vector<string>& vScore);
 
 #endif //LAB10_SCORE_H

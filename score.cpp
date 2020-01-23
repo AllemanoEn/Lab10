@@ -73,13 +73,13 @@ void insertScore(const string& newScore, const string& username, const string& s
         cnt++;
     }
 
-
     if(!FIND)
     {
         vScore.push_back(formatedScore);
     }
 
-    sort(vScore.rbegin(),vScore.rend());
+    vector<string> vScoresOnly = getOnlyScores(vScore);
+    sortScores(vScoresOnly,vScore);
 
     for(const auto & k : vScore) {
         outputFile << k << endl;
@@ -87,11 +87,30 @@ void insertScore(const string& newScore, const string& username, const string& s
     outputFile.close();
 }
 
-vector<string> sortScores(const string& strNomDuFichier){
+vector<string> sortScores(vector<string>& vNumbers, vector<string>& vScore){
+
+    for (int i = 0; i < vNumbers.size()-1; i++) {
+        if(vNumbers.at(i).size()<=vNumbers.at(i+1).size()) {
+            swap(vScore.at(i), vScore.at(i + 1));
+            swap(vNumbers.at(i), vNumbers.at(i + 1));
+            i = -1;
+        }
+        else if (vNumbers.at(i) < vNumbers.at(i + 1)) {
+            swap(vScore.at(i), vScore.at(i + 1));
+            swap(vNumbers.at(i), vNumbers.at(i + 1));
+            i = -1;
+        }
+    }
+
+    return vScore;
 
 }
 
-void getOnlyScores(const vector<string>& vScore){
-
-
+vector<string> getOnlyScores(const vector<string>& vScore){
+    vector<string> vNumbers;
+    for(string s : vScore)
+    {
+        vNumbers.push_back(s.substr(0,s.find(':')));
+    }
+    return vNumbers;
 }
