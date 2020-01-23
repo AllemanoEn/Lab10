@@ -43,7 +43,7 @@ void fruitSpawn(std::vector<std::vector<int>>& vecteurObstacles, int& fruitX, in
  * @param width largeur du jeu
  * @param height hauteur du jeu
  */
-void obstacleSpawn(const int& nbObstacles, std::vector<std::vector<int>>& vectorObstacles,int& fruitPosX, int& fruitPosY,  const int width, const int height);
+void obstacleSpawn(const int nbObstacles, std::vector<std::vector<int>>& vectorObstacles,int& fruitPosX, int& fruitPosY,  const int width, const int height);
 
 /**
 * @brief Fonction modifiant le plateau de jeu et les éléments du jeu.

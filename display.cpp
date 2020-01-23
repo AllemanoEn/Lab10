@@ -90,7 +90,7 @@ void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, in
             if (j == 0)
                 std::cout << BORDER;
 
-            std::vector<int> coord = {i, j};
+            std::vector<int> coord = {j, i};
 
             if (i == snakePosY && j == snakePosX)
                 std::cout << SNAKE_HEAD;
@@ -98,13 +98,7 @@ void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, in
                 std::cout << FRUIT;
             else if (std::find(vecteurObstacles.begin(), vecteurObstacles.end(), coord) != vecteurObstacles.end())
                 std::cout << OBSTACLE;
-               /* for(size_t t = 0; t < vecteurObstacles.size();t++)
-                {
-                    if (j == vecteurObstacles.at(t).at(0) && i == vecteurObstacles.at(t).at(1))
-                    {
-                        std::cout << OBSTACLE;
-                    }
-                } */
+
 
 
 

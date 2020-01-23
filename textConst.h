@@ -52,10 +52,10 @@ const std::string SNAKE_HEAD = "O";
 const std::string FRUIT = "F";
 const std::string SNAKE_TAIL = "o";
 const std::string ACTUAL_SCORE = "Actual score : ";
+const std::string OBSTACLE = "x";
 
 // USERNAME
 const std::string USERNAME_REQUEST = "Enter your username : ";
 
 // PATH FILE
 const std::string SCOREFILEPATH = "../score.txt";
-const std::string OBSTACLE = "x";

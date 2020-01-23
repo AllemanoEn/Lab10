@@ -23,19 +23,20 @@ void fruitSpawn(std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int
 
 }
 
-void obstacleSpawn(const int& nbObstacles, std::vector<std::vector<int>>& vectorObstacles, int& fruitPosX, int& fruitPosY, const int width, const int height)
+void obstacleSpawn(const int nbObstacles, std::vector<std::vector<int>>& vectorObstacles, int& fruitPosX, int& fruitPosY, const int width, const int height)
 {
+
     for(unsigned i=0;i<nbObstacles;i++)
     {
         //srand ( time(NULL) );
         int obstacleX = rand() % width;
         int obstacleY = rand() % height;
-            if (fruitPosX != obstacleX && fruitPosY != obstacleY) {
+            if (fruitPosX != obstacleX && fruitPosY != obstacleY && obstacleX < width && obstacleY < height) {
                 vectorObstacles.push_back({obstacleX,obstacleY});
             }
             else
             {
-                obstacleSpawn(nbObstacles,vectorObstacles,fruitPosX,fruitPosY,width,height);
+                i--;
             }
     }
 

@@ -13,11 +13,7 @@
  */
 
 #include <string>
-#include <cstring>
-#include <unistd.h>
-#include <stdio.h>
-#include <limits>
-#include <cstdlib>
+
 
 #include "sysFunc.h"
 #include "display.h"
