@@ -5,4 +5,14 @@
 18:Teko
 0:Enzo
 0:Enzolo
+<<<<<<< Updated upstream
 18:Teki
+=======
+0:proati
+0:d
+0:s
+0:q
+2:ww
+0:Park
+0:^Z
+>>>>>>> Stashed changes
