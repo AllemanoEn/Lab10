@@ -15,6 +15,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 /// \brief Permet la lecture d'un fichier ligne par ligne, et les ajoute à la suite dans un vecteur de type string
 /// \param strNomDuFichier : contient le nom du fichier à chercher avec son extension (ex: fichier.txt)
@@ -50,11 +51,13 @@ void insertScore(const string& newScore, const string& username, const string& s
 {
     vector<string> vScore = lecture(strNomDuFichier);
     string highScore;
-    string formatedScore = newScore + ":" + username + "\n";
+    string formatedScore = newScore + ":" + username;
     int i = 0;
     bool FIND = false;
     ofstream outputFile;
-    outputFile.open(strNomDuFichier,std::ofstream::app);
+    outputFile.open(strNomDuFichier);
+    int cnt = 0;
+
     for(auto vs : vScore)
     {
         if(vs.find(username) != string::npos){
@@ -62,17 +65,21 @@ void insertScore(const string& newScore, const string& username, const string& s
                 highScore += vs.at(i);
             }
             if(highScore < newScore){
-                for(int j = 0; j < i; ++j){
-                    vs.at(j) = highScore.at(j);
-                }
+                vScore.at(cnt) = formatedScore;
             }
             FIND = true;
             break;
         }
+        cnt++;
     }
 
     if(!FIND)
-        outputFile << formatedScore;
+    {
+        vScore.push_back(formatedScore);
+    }
 
+    for(int i = 0; i < vScore.size(); i++) {
+        outputFile << vScore[i] << endl;
+    }
     outputFile.close();
 }
