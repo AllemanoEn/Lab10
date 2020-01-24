@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 58:Trooo
 53:SAlut
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 43:Marc
 28:Enzo
 23:Jean
@@ -7,7 +11,13 @@
 2:Zut
 1:Paulho
 1:Paulha
+<<<<<<< Updated upstream
 0:Teko
 0:Pire
 0:Enzolo
 0:zue
+=======
+18:Teko
+0:Enzolo
+0:Enzo
+>>>>>>> Stashed changes
