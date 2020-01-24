@@ -90,12 +90,12 @@ void insertScore(const string& newScore, const string& username, const string& s
 vector<string> sortScores(vector<string>& vNumbers, vector<string>& vScore){
 
     for (int i = 0; i < vNumbers.size()-1; i++) {
-        if(vNumbers.at(i).size()<=vNumbers.at(i+1).size()) {
+        if(vNumbers.at(i).size()<vNumbers.at(i+1).size()) {
             swap(vScore.at(i), vScore.at(i + 1));
             swap(vNumbers.at(i), vNumbers.at(i + 1));
             i = -1;
         }
-        else if (vNumbers.at(i) < vNumbers.at(i + 1)) {
+        else if (vNumbers.at(i).size() == vNumbers.at(i+1).size() && vNumbers.at(i) < vNumbers.at(i + 1)) {
             swap(vScore.at(i), vScore.at(i + 1));
             swap(vNumbers.at(i), vNumbers.at(i + 1));
             i = -1;
