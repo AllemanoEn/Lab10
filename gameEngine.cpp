@@ -16,7 +16,10 @@ void fruitSpawn(std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int
             if (fruitPosX != vectorObstacles.at(j).at(0) && fruitPosY != vectorObstacles.at(j).at(1)) {
                 fruitX = fruitPosX;
                 fruitY = fruitPosY;
-            } else fruitSpawn(vectorObstacles, fruitX, fruitY, width, height);
+            } else {
+                fruitSpawn(vectorObstacles, fruitX, fruitY, width, height);
+                break;
+            }
 
         }
     }
@@ -99,7 +102,6 @@ void logic(std::vector<std::vector<int>>& vecteurObstacles, const int width,cons
     // Test si le serpent touche un obstacle
      for(size_t i = 0; i < vecteurObstacles.size();i++)
      {
-
          if (snakePosX == vecteurObstacles.at(i).at(0) && snakePosY == vecteurObstacles.at(i).at(1))
          {
              gameover = true;
