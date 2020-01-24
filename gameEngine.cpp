@@ -10,7 +10,7 @@ void fruitSpawn(std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int
     {
         fruitX=fruitPosX;
         fruitY=fruitPosY;
-    }
+    } /*
     else {
         for (size_t j = 0; j < vectorObstacles.size(); j++) { // Empêche le spawn d'obstacle sur le fruit
             if (fruitPosX != vectorObstacles.at(j).at(0) && fruitPosY != vectorObstacles.at(j).at(1)) {
@@ -19,10 +19,25 @@ void fruitSpawn(std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int
             } else {
                 fruitSpawn(vectorObstacles, fruitX, fruitY, width, height);
                 break;
-            }
+            } */
+    else {
+            bool SameValues = false;
+            do
+            {
+                int fruitPosX = rand() % width;
+                int fruitPosY = rand() % height;
+                std::vector<int> positions = {{fruitPosX,fruitPosY}};
+                if(std::find(vectorObstacles.begin(),vectorObstacles.end(), positions) != vectorObstacles.end())
+                {
+                    SameValues = true;
+                }
+
+            } while (!SameValues);
+            fruitX = fruitPosX;
+            fruitY = fruitPosY;
 
         }
-    }
+    //}
 
 }
 
