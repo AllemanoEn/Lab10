@@ -69,7 +69,7 @@ void displayPlayerScore(){
         }
     }
     if(UNKNOW_PLAYER){
-        cout << "Unknow player :(" << endl;
+        cout << "Unknown player :(" << endl;
     }
 
     cout << INSTR_MENU << endl;

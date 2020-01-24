@@ -44,6 +44,7 @@ void getInstructions(int score);
 
 /**
 * @brief Fonction pour ajouter les scores du joueur.
+* @param score score actuel du joueur.
 */
 void setNewScore(int score);
 
