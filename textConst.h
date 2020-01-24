@@ -1,6 +1,6 @@
 #include <string>
 
-// GAMES KEYS
+/// GAMES KEYS
 const char KEY_START = 's';
 const char KEY_QUIT = 'q';
 const char KEY_INSTRUCTION = 'i';
@@ -12,7 +12,7 @@ const char KEY_MENU = 'm';
 const char KEY_HIGHSCORE = 'h';
 const char KEY_SEARCHPLAYER = 'p';
 
-// MENU 
+/// MENU
 const std::string TXT_HELLO = "Hello, press ";
 const std::string TXT_PRESS = "Press ";
 const std::string TXT_START = " to Start!";
@@ -29,7 +29,7 @@ const std::string MENU_SEARCHPLAYER = TXT_PRESS + KEY_SEARCHPLAYER + TXT_SEARCHP
 const std::string MENU_HIGHSCORE = TXT_PRESS + KEY_HIGHSCORE + TXT_HIGHSORE;
 const std::string MENU_SCORE = "Your Previous Score: ";
 
-// INSTRUCTION
+/// INSTRUCTION
 const std::string TXT_USE = "Use the ";
 const std::string TXT_KEY = " key to ";
 const std::string TXT_KEY_QUIT = " any time during the game to EXIT.";
@@ -46,7 +46,7 @@ const std::string INSTR_RIGHT = TXT_USE + KEY_RIGHT + TXT_KEY + TXT_GO_RIGHT;
 const std::string INSTR_EXIT = TXT_USE + KEY_QUIT + TXT_KEY_QUIT;
 const std::string INSTR_MENU = TXT_USE + KEY_MENU + TXT_KEY_MENU;
 
-// GAMES CHAR
+/// GAMES CHAR
 const std::string BORDER = "#";
 const std::string SNAKE_HEAD = "O";
 const std::string FRUIT = "F";
@@ -54,8 +54,8 @@ const std::string SNAKE_TAIL = "o";
 const std::string ACTUAL_SCORE = "Actual score : ";
 const std::string OBSTACLE = "x";
 
-// USERNAME
+/// USERNAME
 const std::string USERNAME_REQUEST = "Enter your username : ";
 
-// PATH FILE
+/// PATH FILE
 const std::string SCOREFILEPATH = "../score.txt";

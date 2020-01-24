@@ -19,43 +19,31 @@
 #include "textConst.h"
 #include <vector>
 
-/**
-* @brief Fonction affichant les informations du menu au terminal.
-* @param score score actuel du joueur.
-*/
+/// \brief Fonction affichant les informations du menu au terminal.
+/// \param score score actuel du joueur.
 void displayMenu(int score);
 
-/**
-* @brief Fonction affichant les informations des instructions au terminal.
-*/
+/// \brief Fonction affichant les informations des instructions au terminal.
 void displayInstructions();
 
-/**
-* @brief Fonction affichant les meilleurs scores du meilleurs au moins bon.
-*/
+/// \brief Fonction affichant les meilleurs scores du meilleurs au moins bon.
 void displayHighScore();
 
-/**
-* @brief Fonction affichant la demande du nom d'utilisateur du joueur.
-*/
+/// \brief Fonction affichant la demande du nom d'utilisateur du joueur.
 void displayUsernameRequest();
 
-/**
-* @brief Fonction affichant le score d'un joueur.
-*/
+/// \brief Fonction affichant le score d'un joueur.
 void displayPlayerScore();
 
-/**
-* @brief Fonction affichant le plateau de jeu.
-* @param width largeur du plateau de jeu.
-* @param height hauteur du plateau de jeu.
-* @param snakePosX position X de la tête du serpent.
-* @param snakePosY position Y de la tête du serpent.
-* @param fruitPosX position X du fruit.
-* @param fruitPosY position Y du fruit.
-* @param snakeSize longueur du serpent.
-* @param tailX tableau de positions X correspondant aux coordonnées X de la queue du serpent
-* @param tailY tableau de positions Y correspondant aux coordonnées Y de la queue du serpent
-*/
+/// \brief Fonction affichant le plateau de jeu.
+/// \param width largeur du plateau de jeu.
+/// \param height hauteur du plateau de jeu.
+/// \param snakePosX position X de la tête du serpent.
+/// \param snakePosY position Y de la tête du serpent.
+/// \param fruitPosX position X du fruit.
+/// \param fruitPosY position Y du fruit.
+/// \param snakeSize longueur du serpent.
+/// \param tailX tableau de positions X correspondant aux coordonnées X de la queue du serpent
+/// \param tailY tableau de positions Y correspondant aux coordonnées Y de la queue du serpent
 void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, int fruitPosY, int snakeSize, int tailX[], int tailY[], std::vector<std::vector<int>>& vecteurObstacles);
 #endif

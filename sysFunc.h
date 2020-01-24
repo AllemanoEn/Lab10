@@ -44,15 +44,11 @@
     int getch();
 #endif
 
-/**
-* @brief Fonction permettant de supprimer les éléments affiché sur le terminal.
-*/
+/// \brief Fonction permettant de supprimer les éléments affiché sur le terminal.
 void clearScreen();
 
-/**
-* @brief Fonction permettant au terminal d'attendre (bloquer) un certain temps définis.
-* @param microseconds Temps d'attente en microsecondes
-*/
+/// \brief Fonction permettant au terminal d'attendre (bloquer) un certain temps définis.
+/// \param microseconds Temps d'attente en microsecondes
 void mySleep(int microseconds);
 
 #endif
