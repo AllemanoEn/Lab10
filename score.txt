@@ -1,23 +1,17 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-5:s
->>>>>>> Stashed changes
-3:a
-1:d
-=======
 53:SAlut
 43:Marc
 28:Enzo
 23:Jean
+18:Teko
+5:Htiler
 4:Morge
+4:Hitler
 2:Zut
+2:lovni
 1:Paulho
 0:Teko
 0:Pire
 0:Enzolo
 0:zue
-18:Teko
 0:Enzolo
 0:Enzo
->>>>>>> Stashed changes

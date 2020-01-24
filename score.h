@@ -17,6 +17,9 @@
 #include <string>
 using namespace std;
 
+/// \brief Permet la lecture d'un fichier ligne par ligne, et les ajoute à la suite dans un vecteur de type string
+/// \param strNomDuFichier : contient le nom du fichier à chercher avec son extension (ex: fichier.txt)
+/// \return Retourne le vecteur contenant les lignes du fichier qui a été lu
 vector<string> lecture(const string& strNomDuFichier);
 
 void insertScore(const string& newScore, const string& username, const string& strNomDuFichier);
