@@ -1,15 +1,11 @@
-/*
- -----------------------------------------------------------------------------------
- Laboratoire : Snake
- Fichier     : display.h
- Auteur(s)   : Yann Lederrey
- Date        : 20.01.2019
- 
- Compilateur : g++ (GCC) 9.2.0
-
- Brief       : Fonction ayant pour rôle d'afficher des éléments du jeu SNAKE.
- -----------------------------------------------------------------------------------
- */
+/// \file display.h
+/// \authors Yann Lederrey, Enzo Allemano, Jonathan Stocchetti, Nicolas Viotti
+/// \date 20.01.2019
+///
+/// \brief \b Laboratoire \b 10, Snake
+/// \brief Fonction ayant pour rôle d'afficher des éléments du jeu SNAKE.
+///
+/// Compilateur : MinGw-g++ 6.3.0
 
 #ifndef DISPLAY
 #define DISPLAY

@@ -1,15 +1,11 @@
-/*
- -----------------------------------------------------------------------------------
- Laboratoire : Snake
- Fichier     : sysFunc.cpp
- Auteur(s)   : Yann Lederrey
- Date        : 20.01.2019
- 
- Compilateur : g++ (GCC) 9.2.0
-
- Brief       : Implémentation des fonctions déclarée dans sysFunc.h
- -----------------------------------------------------------------------------------
- */
+/// \file sysFunc.cpp
+/// \authors Yann Lederrey, Enzo Allemano, Jonathan Stocchetti, Nicolas Viotti
+/// \date 20.01.2019
+///
+/// \brief \b Laboratoire \b 10, Snake
+/// \brief Implémentation des fonctions déclarée dans sysFunc.h
+///
+/// Compilateur : MinGw-g++ 6.3.0
 
 #include "sysFunc.h"
 

@@ -1,16 +1,12 @@
-/*
- -----------------------------------------------------------------------------------
- Laboratoire : Snake
- Fichier     : main.cpp
- Auteur(s)   : Yann Lederrey
- Date        : 20.01.2019
- 
- Compilateur : g++ (GCC) 9.2.0
-
- Brief       : Implémentation d'un jeu de snake en console
- Sources     : https://code.sololearn.com/c8ubSKG6fX73/#cpp
- -----------------------------------------------------------------------------------
- */
+/// \file main.cpp
+/// \authors Yann Lederrey, Enzo Allemano, Jonathan Stocchetti, Nicolas Viotti
+/// \date 20.01.2019
+///
+/// \brief \b Laboratoire \b 10, Snake
+/// \brief Implémentation d'un jeu de snake en console
+///
+/// Sources : https://code.sololearn.com/c8ubSKG6fX73/#cpp
+/// Compilateur : MinGw-g++ 6.3.0
 
 #include <string>
 

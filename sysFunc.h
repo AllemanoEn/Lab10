@@ -1,17 +1,12 @@
-/*
- -----------------------------------------------------------------------------------
- Laboratoire : Snake
- Fichier     : sysFunc.h
- Auteur(s)   : Yann Lederrey
- Date        : 20.01.2019
- 
- Compilateur : g++ (GCC) 9.2.0
-
- Brief       : Fichier comportant des fonctions faisant des actions sur le terminal. Ces dernières
-                ont été programmée de telle sorte qu'elle soient compatible sur LINUX et WINOWS
- -----------------------------------------------------------------------------------
- */
-
+/// \file sysFunc.h
+/// \authors Yann Lederrey, Enzo Allemano, Jonathan Stocchetti, Nicolas Viotti
+/// \date 20.01.2019
+///
+/// \brief \b Laboratoire \b 10, Snake
+/// \brief Fichier comportant des fonctions faisant des actions sur le terminal. Ces dernières
+///                ont été programmée de telle sorte qu'elle soient compatible sur LINUX et WINOWS
+///
+/// Compilateur : MinGw-g++ 6.3.0
 
 #ifndef SYSFUNC
 #define SYSFUNC

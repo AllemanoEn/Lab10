@@ -1,15 +1,11 @@
-/*
- -----------------------------------------------------------------------------------
- Laboratoire : Snake
- Fichier     : gameEngine.h
- Auteur(s)   : Yann Lederrey
- Date        : 20.01.2019
- 
- Compilateur : g++ (GCC) 9.2.0
-
- Brief       : Fonctions permettant les diverses actions du jeu SNAKE en terminal.
- -----------------------------------------------------------------------------------
- */
+/// \file gameEngine.h
+/// \authors Yann Lederrey, Enzo Allemano, Jonathan Stocchetti, Nicolas Viotti
+/// \date 20.01.2019
+///
+/// \brief \b Laboratoire \b 10, Snake
+/// \brief Fonctions permettant les diverses actions du jeu SNAKE en terminal.
+///
+/// Compilateur : MinGw-g++ 6.3.0
 
 #ifndef ENGINE
 #define ENGINE
