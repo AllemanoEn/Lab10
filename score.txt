@@ -9,6 +9,7 @@
 2:Zut
 2:lovni
 1:Paulho
+1:q
 0:Teko
 0:Pire
 0:Enzolo
