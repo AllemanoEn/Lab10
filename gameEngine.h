@@ -32,7 +32,7 @@ enum eDirection {
 * @param width largeur du jeu.
 * @param height hauteur du jeu.
 */
-void fruitSpawn(std::vector<std::vector<int>>& vecteurObstacles, int& fruitX, int& fruitY, const int width, const int height);
+void fruitSpawn(const std::vector<std::vector<int>>& vecteurObstacles, int& fruitX, int& fruitY, const int width, const int height);
 
 /**
  * @brief Fonction calculant la position de l'obstacle
@@ -60,6 +60,6 @@ void obstacleSpawn(const int nbObstacles, std::vector<std::vector<int>>& vectorO
 * @param direction direction du mouvement.
 * @param gameover [out] boolean définissant si le joueur a perdu
 */
-void logic(std::vector<std::vector<int>>& vectorObstacles, const int width, const int height, int& snakePosX, int& snakePosY, int& fruitPosX, int& fruitPosY, int& snakeSize, int tailX[], int tailY[], const eDirection direction, bool& gameover);
+void logic(const std::vector<std::vector<int>>& vectorObstacles, const int width, const int height, int& snakePosX, int& snakePosY, int& fruitPosX, int& fruitPosY, int& snakeSize, int tailX[], int tailY[], const eDirection direction, bool& gameover);
 
 #endif

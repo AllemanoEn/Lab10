@@ -1,7 +1,7 @@
 #include "gameEngine.h"
 
 
-void fruitSpawn(std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int& fruitY, const int width, const int height)
+void fruitSpawn(const std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int& fruitY, const int width, const int height)
  {
     srand ( time(NULL) );
     int fruitPosX = rand() % width;
@@ -10,18 +10,10 @@ void fruitSpawn(std::vector<std::vector<int>>& vectorObstacles, int& fruitX, int
     {
         fruitX=fruitPosX;
         fruitY=fruitPosY;
-    } /*
-    else {
-        for (size_t j = 0; j < vectorObstacles.size(); j++) { // Empêche le spawn d'obstacle sur le fruit
-            if (fruitPosX != vectorObstacles.at(j).at(0) && fruitPosY != vectorObstacles.at(j).at(1)) {
-                fruitX = fruitPosX;
-                fruitY = fruitPosY;
-            } else {
-                fruitSpawn(vectorObstacles, fruitX, fruitY, width, height);
-                break;
-            } */
+    }
     else {
             bool SameValues = false;
+            //Tant que la position X,Y est trouvée dans le vecteur, on en régénère une.
             do
             {
                 int fruitPosX = rand() % width;
@@ -46,7 +38,6 @@ void obstacleSpawn(const int nbObstacles, std::vector<std::vector<int>>& vectorO
 
     for(unsigned i=0;i<nbObstacles;i++)
     {
-        //srand ( time(NULL) );
         int obstacleX = rand() % width;
         int obstacleY = rand() % height;
             if (fruitPosX != obstacleX && fruitPosY != obstacleY && obstacleX < width && obstacleY < height) {
@@ -61,7 +52,7 @@ void obstacleSpawn(const int nbObstacles, std::vector<std::vector<int>>& vectorO
 
 }
 
-void logic(std::vector<std::vector<int>>& vecteurObstacles, const int width,const int height, int& snakePosX, int& snakePosY, int& fruitPosX, int& fruitPosY, int& snakeSize, int tailX[], int tailY[], const eDirection direction, bool& gameover)
+void logic(const std::vector<std::vector<int>>& vecteurObstacles, const int width,const int height, int& snakePosX, int& snakePosY, int& fruitPosX, int& fruitPosY, int& snakeSize, int tailX[], int tailY[], const eDirection direction, bool& gameover)
  {
     int prevX = tailX[0];
     int prevY = tailY[0];
