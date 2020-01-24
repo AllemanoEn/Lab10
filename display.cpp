@@ -99,9 +99,6 @@ void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, in
             else if (std::find(vecteurObstacles.begin(), vecteurObstacles.end(), coord) != vecteurObstacles.end())
                 std::cout << OBSTACLE;
 
-
-
-
             else {
 
                 bool print = false;
@@ -120,7 +117,6 @@ void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, in
             }
 
             if (j == width - 1)
-
                 std::cout << BORDER;
         }
         std::cout << std::endl;
@@ -133,5 +129,4 @@ void draw(int width, int height, int snakePosX, int snakePosY, int fruitPosX, in
     std::cout << std::endl;
 
     std::cout << ACTUAL_SCORE << snakeSize << std::endl;
-
 }

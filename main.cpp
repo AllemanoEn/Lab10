@@ -29,58 +29,44 @@ const int START_POS_Y_SNAKE = HEIGHT / 2;
 const int SPEED = 500000;
 const int NBOBSTACLES = 3;
 
-/**
-* @brief Fonction affichant le menu et supprimant l'affichage du terminal.
-* @param score score actuel du joueur.
-*/
+/// \brief Fonction affichant le menu et supprimant l'affichage du terminal.
+/// \param score score actuel du joueur.
 void restart(int score);
 
-/**
-* @brief Fonction affichant le menu d'instructions et supprimant l'affichage du terminal.
-* Cette fonction permet aussi de quitter le menu d'instructions.
-* @param score score actuel du joueur.
-*/
+/// \brief Fonction affichant le menu d'instructions et supprimant l'affichage du terminal.
+/// Cette fonction permet aussi de quitter le menu d'instructions.
+/// \param score score actuel du joueur.
 void getInstructions(int score);
 
-/**
-* @brief Fonction pour ajouter les scores du joueur.
-* @param score score actuel du joueur.
-*/
+/// \brief Fonction pour ajouter les scores du joueur.
+/// \param score score actuel du joueur.
 void setNewScore(int score);
 
-/**
-* @brief Fonction affichant les scores du meilleurs au moins bon et en supprimant l'affichage du terminal.
-* Cette fonction permet aussi de quitter ce menu.
-*/
+/// \brief Fonction affichant les scores du meilleurs au moins bon et en supprimant l'affichage du terminal.
+/// Cette fonction permet aussi de quitter ce menu.
 void getHighScore(int score);
 
-/**
-* @brief Fonction affichant le score d'un joueur donné et en supprimant l'affichage du terminal.
-* Cette fonction permet aussi de quitter ce menu.
-*/
+/// \brief Fonction affichant le score d'un joueur donné et en supprimant l'affichage du terminal.
+/// Cette fonction permet aussi de quitter ce menu.
 void getPlayerScore(int score);
 
-/**
-* @brief Fonction faisant la traduction entre la direction entrée par l'utilisateur et la direction du serpent.
-* @param direction direction proposée par l'utilisateur
-* @param oldDirection Direction actuelle du serpent
-* @param gameover [out] définis si l'utilisateur arrête la partie.
-* @return nouvelle direction du serpent.
-*/
+/// \brief Fonction faisant la traduction entre la direction entrée par l'utilisateur et la direction du serpent.
+/// \param direction direction proposée par l'utilisateur
+/// \param oldDirection Direction actuelle du serpent
+/// \param gameover [out] définis si l'utilisateur arrête la partie.
+/// \return nouvelle direction du serpent.
 eDirection manageDirection(char direction, eDirection oldDirection, bool& gameover);
 
-/**
-* @brief Fonction remettant les variables de jeu par défaut.
-* @param posSnakeX [out] position X de la tête du serpent.
-* @param posSnakeY [out] position Y de la tête du serpent.
-* @param direction [out] direction initiale du serpent.
-* @param gameover [out] définis si le joueur arrête ou perd la partie.
-*/
+/// \brief Fonction remettant les variables de jeu par défaut.
+/// \param posSnakeX [out] position X de la tête du serpent.
+/// \param posSnakeY [out] position Y de la tête du serpent.
+/// \param direction [out] direction initiale du serpent.
+/// \param gameover [out] définis si le joueur arrête ou perd la partie.
 void reload(int& posSnakeX, int& posSnakeY, int& length, eDirection& direction, bool& gameover);
 
 int main()
  {
-    // CONFIGURATIONS VARIABLES
+    /// CONFIGURATIONS VARIABLES
     bool gameover = false;
     bool shutDown = false;
     int tailX[400], tailY[400];
@@ -99,7 +85,7 @@ int main()
 
     obstacleSpawn(NBOBSTACLES,vecteurObstacles, posFruitX, posFruitY, WIDTH, HEIGHT);
 
-    // BOUCLE DU MENU.
+    /// BOUCLE DU MENU.
     do {
         restart(snakeSize);
 
@@ -109,15 +95,15 @@ int main()
         {
             reload(posSnakeX, posSnakeY, snakeSize, dir, gameover);
 
-            // BOUCLE DE JEU
+            /// BOUCLE DE JEU
             while (!gameover) {
 
                 clearScreen();
 
-                // dessine le pleateau de jeu
+                /// dessine le pleateau de jeu
                 draw(WIDTH, HEIGHT, posSnakeX, posSnakeY, posFruitX, posFruitY, snakeSize, tailX, tailY,vecteurObstacles);
 
-                // detecte une entrée sur le clavier et récupère le charactère.
+                /// detecte une entrée sur le clavier et récupère le charactère.
                 char newDirection;
                 if (kbhit()) {
                     newDirection = getch();
@@ -126,23 +112,23 @@ int main()
                     actualDirection = newDirection;
                 }
 
-                // Convertis la direction donnée par l'utilisateur pour le serpent.
+                /// Convertis la direction donnée par l'utilisateur pour le serpent.
                 dir = manageDirection(actualDirection, dir, gameover);
 
-                // Ordonne le mouvement au serpent et définis si il meurt.
+                /// Ordonne le mouvement au serpent et définis si il meurt.
                 logic(vecteurObstacles,WIDTH, HEIGHT, posSnakeX, posSnakeY, posFruitX, posFruitY, snakeSize, tailX, tailY, dir, gameover);
 
-                // met en pause le système définissant la vitesse du serpent.
+                /// met en pause le système définissant la vitesse du serpent.
                 mySleep(SPEED);
             }
 
-            // Enregistrer le score du joueur
+            /// Enregistrer le score du joueur
             setNewScore(snakeSize);
         }
-        // test si on souhaite afficher le menu
+        /// test si on souhaite afficher le menu
         else if (input.at(0) == KEY_INSTRUCTION)
             getInstructions(snakeSize);
-        // test si on souhaite arrêter de jouer.
+        /// test si on souhaite arrêter de jouer.
         else if (input.at(0) == KEY_QUIT)
             shutDown = true;
         else if (input.at(0) == KEY_SEARCHPLAYER){

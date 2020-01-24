@@ -12,25 +12,22 @@ void fruitSpawn(const std::vector<std::vector<int>>& vectorObstacles, int& fruit
         fruitY=fruitPosY;
     }
     else {
-            bool SameValues = false;
-            //Tant que la position X,Y est trouvée dans le vecteur, on en régénère une.
-            do
+        bool SameValues = false;
+        ///Tant que la position X,Y est trouvée dans le vecteur, on en régénère une.
+        do
+        {
+            int fruitPosX = rand() % width;
+            int fruitPosY = rand() % height;
+            std::vector<int> positions = {{fruitPosX,fruitPosY}};
+            if(std::find(vectorObstacles.begin(),vectorObstacles.end(), positions) != vectorObstacles.end())
             {
-                int fruitPosX = rand() % width;
-                int fruitPosY = rand() % height;
-                std::vector<int> positions = {{fruitPosX,fruitPosY}};
-                if(std::find(vectorObstacles.begin(),vectorObstacles.end(), positions) != vectorObstacles.end())
-                {
-                    SameValues = true;
-                }
+                SameValues = true;
+            }
 
-            } while (!SameValues);
-            fruitX = fruitPosX;
-            fruitY = fruitPosY;
-
-        }
-    //}
-
+        } while (!SameValues);
+        fruitX = fruitPosX;
+        fruitY = fruitPosY;
+    }
 }
 
 void obstacleSpawn(const int nbObstacles, std::vector<std::vector<int>>& vectorObstacles, int& fruitPosX, int& fruitPosY, const int width, const int height)
@@ -48,8 +45,6 @@ void obstacleSpawn(const int nbObstacles, std::vector<std::vector<int>>& vectorO
                 i--;
             }
     }
-
-
 }
 
 void logic(const std::vector<std::vector<int>>& vecteurObstacles, const int width,const int height, int& snakePosX, int& snakePosY, int& fruitPosX, int& fruitPosY, int& snakeSize, int tailX[], int tailY[], const eDirection direction, bool& gameover)
@@ -88,31 +83,29 @@ void logic(const std::vector<std::vector<int>>& vecteurObstacles, const int widt
             break;
     }
 
-    // Test si la tête du serpent touche un bord.
+    /// Test si la tête du serpent touche un bord.
     if (snakePosX > width || snakePosX < 0 || snakePosY > height || snakePosY < 0) {
         gameover = true;
     }
 
-   // Test si le serpent se mord la queue
+   /// Test si le serpent se mord la queue
     for (int i = 0; i < snakeSize; i++) {
         if (tailX[i] == snakePosX && tailY[i] == snakePosY)
             gameover = true;
     }
 
-    // Test si le serpent mange un Fruit
+    /// Test si le serpent mange un Fruit
     if (snakePosX == fruitPosX && snakePosY == fruitPosY) {
         snakeSize++;
         fruitSpawn(vecteurObstacles,fruitPosX,fruitPosY,width,height);
     }
 
-    // Test si le serpent touche un obstacle
+    /// Test si le serpent touche un obstacle
      for(size_t i = 0; i < vecteurObstacles.size();i++)
      {
          if (snakePosX == vecteurObstacles.at(i).at(0) && snakePosY == vecteurObstacles.at(i).at(1))
          {
              gameover = true;
          }
-
      }
-
 }
